@@ -45,6 +45,8 @@ function show(id, text) {
   document.getElementById(id).textContent = text;
 }
 
-show('res1', JSON.stringify(filterArray([1, 2, 3, 4, 5, 6])));
-show('res2', years.map(y => y + ': ' + isLeap(y)).join('\n'));
-show('res3', JSON.stringify(groupByAge(people), null, 2));
+if (typeof document !== 'undefined') {
+  show('res1', JSON.stringify(filterArray([1, 2, 3, 4, 5, 6])));
+  show('res2', years.map(y => y + ': ' + isLeap(y)).join('\n'));
+  show('res3', JSON.stringify(groupByAge(people), null, 2));
+}
