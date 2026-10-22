@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Кліщ Юрій, ІА-401 (klishchyuriy)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>Лабораторна робота №3</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; padding: 30px; color: #222; }
+    h1 { text-align: center; margin: 0 0 6px; }
+    .who { text-align: center; color: #666; margin-bottom: 24px; }
+    .task { background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 16px 20px; margin: 0 auto 16px; max-width: 760px; }
+    .task h2 { font-size: 18px; margin: 0 0 10px; }
+    .label { font-size: 13px; font-weight: bold; color: #888; text-transform: uppercase; margin: 10px 0 4px; }
+    pre { background: #1e1e1e; color: #9cdcfe; padding: 12px; border-radius: 6px; margin: 0; font-size: 15px; }
+    pre.code { background: #f7f7f7; color: #222; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Лабораторна робота №3</h1>
+  <div class="who">Виконав: Кліщ Юрій, група ІА-401 · klishchyuriy</div>
+
+  <div class="task">
+    <h2>Завдання 1. filterArray</h2>
+    <div class="label">Код</div>
+    <pre class="code">// Завдання 1
+function filterArray(arr) {
+  return arr.filter(function (n) {
+    return n % 2 === 0;
+  });
+}
+
+console.log(filterArray([1, 2, 3, 4, 5, 6]));</pre>
+    <div class="label">Результат</div>
+    <pre id="res1"></pre>
+  </div>
+
+  <div class="task">
+    <h2>Завдання 2. isLeap</h2>
+    <div class="label">Код</div>
+    <pre class="code">// Завдання 2
+function isLeap(year) {
+  return (year % 4 === 0 &amp;&amp; year % 100 !== 0) || year % 400 === 0;
+}
+
+const years = [1900, 2000, 2020, 2023, 2024, 2026];
+for (const y of years) {
+  console.log(y + ': ' + isLeap(y));
+}</pre>
+    <div class="label">Результат</div>
+    <pre id="res2"></pre>
+  </div>
+
+  <div class="task">
+    <h2>Завдання 3. groupByAge</h2>
+    <div class="label">Код</div>
+    <pre class="code">// Завдання 3
+function groupByAge(people) {
+  const result = {};
+  for (const person of people) {
+    if (!result[person.age]) {
+      result[person.age] = [];
+    }
+    result[person.age].push(person.name);
+  }
+  return result;
+}
+
+const people = [
+  { name: "Oleg", age: 25 },
+  { name: "Alla", age: 30 },
+  { name: "Peter", age: 25 },
+  { name: "Ivan", age: 30 }
+];
+
+console.log(groupByAge(people));</pre>
+    <div class="label">Результат</div>
+    <pre id="res3"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
